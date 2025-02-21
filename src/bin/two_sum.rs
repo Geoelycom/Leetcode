@@ -31,14 +31,22 @@
 
 use std::collections::HashMap;
 fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
-  let mut seen = Hashmap::new();
+  let mut seen: HashMap<i32, usize> = HashMap::new();
   for (index, value) in nums.iter().enumerate() {
     let complement = target - value;
       if seen.contains_key(&complement) {
         return vec![seen[&complement] as i32, index as i32];
       }
+      seen.insert(*value, index);
   }
   vec![]
 }
+
+fn main () {
+  let nums = vec![3, 3];
+  let target = 6;
+  println!("{:?}", two_sum(nums, target));
+}
+
 
 // Time Complexity: O(n)

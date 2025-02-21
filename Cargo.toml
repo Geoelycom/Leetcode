@@ -1,0 +1,15 @@
+[package]
+name = "leetcode"
+version = "0.1.0"
+authors = ["Geo <whatplebs123@proton.me>"]
+edition = "2021"
+build = "build.rs"
+
+[dependencies]
+
+[[bin]]
+name = "main"
+path = "src/main.rs"
+
+# Include the generated bin targets
+include = ["${OUT_DIR}/bin_targets.rs"]
