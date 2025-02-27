@@ -40,3 +40,40 @@
 // 1 <= nums.length <= 3 * 104
 // -100 <= nums[i] <= 100
 // nums is sorted in non-decreasing order.
+
+
+
+// impl Solution {
+
+  fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+    // first of all we fixed the edge cases if the array is empty
+    if nums.is_empty() {
+      return 0;
+    }
+    // we then create a variable to keep track of the unique elements in the array
+    let mut i = 1;
+    // we then iterate through the array to check for duplicates
+    for j in 1..nums.len() {
+      if nums[j] != nums[i - 1] { // we skip 
+        nums[i] = nums[j];
+        i += 1;
+      }
+    } 
+    return i as i32;
+  }
+  
+
+// }
+
+
+fn main() {
+  let mut nums1 = vec![1, 1, 2];
+  let k1 = remove_duplicates(&mut nums1);
+  println!("k = {}, nums = {:?}", k1, nums1); // k = 2, nums = [1, 2, _]
+
+  let mut nums2 = vec![0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
+  let k2 = remove_duplicates(&mut nums2);
+  println!("k = {}, nums = {:?}", k2, nums2); // k = 5, nums = [0, 1, 2, 3, 4, ...]
+}
+
+// An array nums of integers, already sorted in non-decreasing order (meaning numbers either stay the same or get bigger, like [1, 1, 2] or [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]). We want to remove the duplicates in-place, so that each element appears only once, and return the new length of the array.
