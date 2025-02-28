@@ -45,6 +45,7 @@
  // impl Solution {
 
   fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+    // handle edge cases for empty arrays and when array is <= 2
     if nums.is_empty() {
       return 0;
     }
