@@ -26,8 +26,27 @@
 
 // Note: buy before you sell. which means the buy day (index) should be less than the sell day (index). you cant sell on an earlier day than the day you bought the stock. (buy < sell )
 
-impl Solution {
   fn max_profit(prices: Vec<i32>) -> i32 {
-    if 
-  }
+    if prices.is_empty() {
+      return 0;
+    }
+    let mut max_profit = 0;
+    let mut min_price = prices[0];
+    for i in 1..prices.len() {
+      if prices[i] < min_price {
+        min_price = prices[i];
+      } else {
+        let profit = prices[i] - min_price;
+        if profit > max_profit {
+          max_profit = profit;
+        }
+      }
+      }
+      return max_profit;
+    }
+// }
+fn main() {
+  let prices = vec![7,1,5,3,6,4];
+  let result = max_profit(prices);
+  println!("The maximum profit is: {}", result);
 }
