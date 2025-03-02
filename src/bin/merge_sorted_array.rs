@@ -27,7 +27,7 @@
 // -106 <= nums1[i], nums2[i] <= 106
 
 
-impl Solution {
+
   pub fn find_median_sorted_arrays(nums1: Vec<i32>, nums2: Vec<i32>) -> f64 {
     // create a new vector to store merged array. 
       let mut merged = Vec::new();
@@ -63,7 +63,6 @@ impl Solution {
         return merged[n/2] as f64;
       }
   }
-}
 
 
 // HOW TO MERGE TWO SORTED ARRAYS IN RUST(Using a two pointer technique)
