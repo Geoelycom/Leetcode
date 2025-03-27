@@ -1,8 +1,7 @@
 use std::collections::HashSet;
 use std::collections::HashMap;
 
-impl Solution {
-    pub fn min_reorder(n: i32, connections: Vec<Vec<i32>>) -> i32 {    
+    pub fn min_reorder(_n: i32, connections: Vec<Vec<i32>>) -> i32 {    
         // Create adjacency list with edges in both directions
         let mut adj: HashMap<i32, Vec<(i32, bool)>> = HashMap::new();
         
@@ -40,4 +39,7 @@ impl Solution {
         
         dfs(0, &adj, &mut visited)
     }   
-} 
+
+fn main() {
+
+}

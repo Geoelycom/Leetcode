@@ -31,18 +31,21 @@
 // To create a new database in Postgres, you can use the CREATE DATABASE statement. Here's an example:
 
 
-create mydb;
+// create mydb;
 
 
 // This will create a new database called mydb. You can also specify additional options when creating a database, such as the owner of the database, the character set, and the collation. Here's an example:
 
 
-create database
-mydb
-owner myuser
-encoding 'UTF8'
-lc_collate 'en_US.UTF-8'
-lc_ctype 'en_US.UTF-8';
+// create database
+// mydb
+// owner myuser
+// encoding 'UTF8'
+// lc_collate 'en_US.UTF-8'
+// lc_ctype 'en_US.UTF-8';
 
 
-// This will create a new database called mydb with the specified options.
+// This will create a new database called mydb with the specified options
+fn main () {
+  
+}
