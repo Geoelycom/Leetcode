@@ -77,5 +77,5 @@ fn main() {
 
   let tasks2 = vec!['A', 'C', 'A', 'B', 'D', 'B'];
   let n2 = 1;
-  println!("Example 2: {}", least_interval(tasks2, n2)); // Should print 6
+  println!("Example 2: {}", least_interval(tasks2, n2)); // Should print 6.
 }
