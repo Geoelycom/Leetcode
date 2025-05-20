@@ -21,7 +21,7 @@ let mut vector = vec![2,4,6,8,10];
 
 fn concate_strings(s: String) -> String {
   let string1 = String::from("Hello");
-  let result = s + "" +  &string1;
+  let result = string1 + " " +  &s;
   println!("{}", result);
   return result;
 }
