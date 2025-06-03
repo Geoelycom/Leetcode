@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import React from 'react'
+import { useState, useEffect } from 'react';
+import React from 'react';
 // import products from './product'
 import './index.css'
 
