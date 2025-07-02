@@ -1,0 +1,3 @@
+Flask==2.1.2
+Flask-Cors==3.0.10 # Added for easier frontend communication
+Werkzeug==2.0.3 # Pinned to a version compatible with Flask 2.1.x 
