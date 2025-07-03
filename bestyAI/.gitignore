@@ -1,0 +1,13 @@
+# Python virtual environments
+env/
+venv/
+*.venv/
+*/env/*
+*/venv/*
+*.pyc
+__pycache__/
+*.pytest_cache/
+*.pyo
+*.pyd
+*.dist-info/
+*.egg-info/
