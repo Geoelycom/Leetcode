@@ -47,7 +47,7 @@ import react from 'react';
 import { useState } from 'react';
 
 const comment = [{ id: 1, text: "Great post!", author: "User1" }, { id: 2, text: "Thanks!", author: "User2" }]
-function comment () {
+function Comment ({ comment }) {
 const [userComment, setComment] = useState(comment);
 
   return (
@@ -65,7 +65,7 @@ const [userComment, setComment] = useState(comment);
   )
 }
 
-export default comment;
+export default Comment;
 
 const data = [{ id: 1, name: "Meeting", date: "Mar 20" }, { id: 2, name: "Review", date: "Mar 21" }]
 function LastRender () {

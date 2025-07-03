@@ -1,0 +1,62 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/public:/app/public
+      - /app/node_modules
+    environment:
+      - WATCHPACK_POLLING=true
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./backend:/app
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  db:
+    image: alpine:latest
+    command: sh -c "mkdir -p /shared/database && tail -f /dev/null"
+    volumes:
+      - ./backend/database:/shared/database
+      - ./backend/init_db.sql:/shared/init_db.sql
+      - ./backend/init_db.py:/shared/init_db.py
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "test", "-f", "/shared/database/app.db"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge 

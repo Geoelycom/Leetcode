@@ -1,2 +1,17 @@
 target/
 Cargo.lock
+# Python virtual environments
+env/
+venv/
+*.venv/
+*/env/*
+*/venv/*
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+*.dist-info/
+*.egg-info/
+
+# FastAPI project
+fastapi_docker/
